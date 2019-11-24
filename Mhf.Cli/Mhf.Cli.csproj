@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
+        <RootNamespace>Mhf.Cli</RootNamespace>
+        <Title>Monster Hunter Frontier Z Command Line Interface</Title>
+        <Company>Mhf Team</Company>
+        <Product>Mhf.Cli</Product>
+        <Version>$(Version)</Version>
+        <Copyright>Copyright © 2019 Mhf Team</Copyright>
+        <LangVersion>8</LangVersion>
+    </PropertyGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Mhf.Server\Mhf.Server.csproj" />
+    </ItemGroup>
+</Project>
