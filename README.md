@@ -1,7 +1,6 @@
 Monster Hunter Frontier Z - Server
 ===
 Server Emulator for the Online Game Monster Hunter Frontier Z.   
-Please read through the whole file before asking questions.
 
 ## Table of contents
 - [Disclaimer](#disclaimer)
@@ -10,9 +9,9 @@ Please read through the whole file before asking questions.
   - [Visual Studio](#visual-studio)
   - [VS Code](#vs-code)
   - [IntelliJ Rider](#intellij-rider)
-- [Hosts](#hosts)
 - [Sever](#server)
 - [Client](#client)
+  - [Hosts](#hosts)
   - [Unpacking](#unpacking)
   - [GameGuard](#gameguard)
   - [Bugs](#bugs)
@@ -63,7 +62,20 @@ Open the `MonsterHunterFrontierZ.sln`-file
 ## 4) Debug the Project
 Run the `Mhf.Cli`-Project
 
-# Hosts
+# Server
+With default configuration the server will listen on following ports:
+```
+   80 - http/launcher gui
+  433 - https/authentication
+53312 - tcp/authentication
+53310 - tcp/lobby
+```
+ensure that no other local services run on these ports.
+
+# Client
+Following modifications are recommended when trying to use this server:
+
+## Hosts
 Add following entries to your hosts file to force the client to connect to the local instance.
 ```
 127.0.0.1 cog-members.mhf-z.jp        # MHF Launcher       (web)
@@ -74,19 +86,6 @@ Add following entries to your hosts file to force the client to connect to the l
 127.0.0.1 l0.mhf-g.jp                 # MHF File Checksum  (web) 
 127.0.0.1 u0.mhf-g.jp                 # MHF File Host      (web) 
 ```
-
-# Server
-With default configuration the server will listen on following ports:
-```
-80 - http/launcher gui
-433 - https/authentication
-53312 - tcp/authentication
-53310 - tcp/lobby
-```
-ensure that no other local services run on these.request
-
-# Client
-Following modifications are recommended when trying to use this server:
 
 ## Unpacking
 mhf.exe, mhl.dll, mhfo.dll and mhfo-hd.dll are protected with AsProtect. 
@@ -149,6 +148,9 @@ but will eventually be merged back into develop (to definitely add the new featu
 # Attribution
 ## Contributors
 - Nothilvien [@sebastian-heinz](https://github.com/sebastian-heinz)
+
+## Mentions
+- Ando [@Andoryuuta](https://github.com/Andoryuuta) Reversing & Providing POC for Encryption/Decryption routines
 
 ## 3rd Parties and Libraries
 - System.Data.SQLite (https://system.data.sqlite.org/)
